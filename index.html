@@ -40,7 +40,7 @@
     }
     
     .btn-primary:hover {
-      transform: translateY(-2px);
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
     
@@ -70,21 +70,30 @@
       bottom: 20px;
       right: 20px;
       z-index: 100;
-      animation: pulse 2s infinite;
+      transition: background-color 0.3s ease;
     }
     
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
+    .whatsapp-float:hover {
+      background-color: #25D366;
     }
     
-    /* Efeito de parallax para imagens de fundo */
-    .parallax {
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+    /* Estilos de hover para todos os botões */
+    .btn-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .btn-hover:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    /* Estilos para links e botões de navegação */
+    a.nav-link {
+      transition: color 0.3s ease;
+    }
+    
+    a.nav-link:hover {
+      color: #eab308;
     }
     
     /* Efeito de glassmorphism */
@@ -95,13 +104,14 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
     
-    /* Efeito de hover 3D */
+    /* Efeito de hover simples */
     .hover-3d {
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
     }
     
     .hover-3d:hover {
-      transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.05);
+      background-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
   </style>
 </head>
@@ -116,11 +126,11 @@
       
       <!-- Menu Desktop -->
       <ul class="hidden md:flex space-x-6">
-        <li><a href="#home" class="hover:text-yellow-300 transition-colors">Início</a></li>
-        <li><a href="#services" class="hover:text-yellow-300 transition-colors">Serviços</a></li>
-        <li><a href="#package" class="hover:text-yellow-300 transition-colors">Pacote Completo</a></li>
-        <li><a href="#testimonials" class="hover:text-yellow-300 transition-colors">Depoimentos</a></li>
-        <li><a href="#contact" class="hover:text-yellow-300 transition-colors">Contato</a></li>
+        <li><a href="#home" class="nav-link">Início</a></li>
+        <li><a href="#services" class="nav-link">Serviços</a></li>
+        <li><a href="#package" class="nav-link">Pacotes</a></li>
+        <li><a href="#testimonials" class="nav-link">Depoimentos</a></li>
+        <li><a href="#contact" class="nav-link">Contato</a></li>
       </ul>
       
       <!-- Botão Menu Mobile -->
@@ -141,11 +151,11 @@
         </button>
       </div>
       <ul class="space-y-4">
-        <li><a href="#home" class="block py-2 hover:text-yellow-300 transition-colors">Início</a></li>
-        <li><a href="#services" class="block py-2 hover:text-yellow-300 transition-colors">Serviços</a></li>
-        <li><a href="#package" class="block py-2 hover:text-yellow-300 transition-colors">Pacote Completo</a></li>
-        <li><a href="#testimonials" class="block py-2 hover:text-yellow-300 transition-colors">Depoimentos</a></li>
-        <li><a href="#contact" class="block py-2 hover:text-yellow-300 transition-colors">Contato</a></li>
+        <li><a href="#home" class="block py-2 nav-link">Início</a></li>
+        <li><a href="#services" class="block py-2 nav-link">Serviços</a></li>
+        <li><a href="#package" class="block py-2 nav-link">Pacotes</a></li>
+        <li><a href="#testimonials" class="block py-2 nav-link">Depoimentos</a></li>
+        <li><a href="#contact" class="block py-2 nav-link">Contato</a></li>
       </ul>
     </div>
   </nav>
@@ -157,10 +167,10 @@
       <h2 class="text-4xl md:text-5xl font-bold mb-4">Transforme Sua Empresa com SPSmart</h2>
       <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Desenvolvemos sites, aplicativos e assistentes virtuais para atendimento rápido via redes sociais, marcação de agenda e vendas. Soluções digitais completas para o crescimento do seu negócio.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-flex items-center justify-center hover-3d">
+        <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-flex items-center justify-center">
           <i class="fas fa-comment-dots mr-2"></i> Fale Conosco
         </a>
-        <a href="#services" class="bg-white bg-opacity-20 hover:bg-opacity-30 py-3 px-6 rounded-lg font-semibold transition-all inline-flex items-center justify-center glass">
+        <a href="#services" class="bg-white bg-opacity-20 hover:bg-opacity-30 py-3 px-6 rounded-lg font-semibold transition-all inline-flex items-center justify-center glass btn-hover">
           <i class="fas fa-info-circle mr-2"></i> Saiba Mais
         </a>
       </div>
@@ -272,104 +282,382 @@
     <div class="absolute inset-0 z-0" style="background: url('https://images.unsplash.com/photo-1581090700227-8e3b68af33f0') no-repeat center center; background-size: cover; opacity: 0.3;"></div>
     <div class="bg-gradient-primary bg-opacity-90 absolute inset-0 z-0"></div>
     <div class="container mx-auto px-4 text-center relative z-10">
-      <h2 class="text-3xl font-bold mb-2">Pacote Completo para Sua Empresa</h2>
-      <p class="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">Atualize sua presença digital com nosso pacote tudo-em-um</p>
+      <h2 class="text-3xl font-bold mb-2">Nossos Pacotes</h2>
+      <p class="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">Escolha o plano ideal para as necessidades da sua empresa</p>
       
-      <div class="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg backdrop-blur-sm max-w-4xl mx-auto glass hover-3d">
-        <div class="flex flex-col md:flex-row">
-          <div class="md:w-1/2 mb-6 md:mb-0 md:pr-6">
-            <h3 class="text-2xl font-semibold mb-4">Transformação Digital Completa</h3>
-            <p class="text-gray-300 mb-4">Nosso pacote completo oferece tudo o que sua empresa precisa para se destacar no ambiente digital e aumentar suas vendas.</p>
-            <div class="text-left">
-              <div class="flex items-start mb-3">
-                <div class="bg-yellow-400 text-black rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="ml-4">
-                  <h4 class="font-semibold">Google Maps Profissional</h4>
-                  <p class="text-gray-300 text-sm">Atualização completa com fotos profissionais e informações precisas</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start mb-3">
-                <div class="bg-yellow-400 text-black rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-laptop"></i>
-                </div>
-                <div class="ml-4">
-                  <h4 class="font-semibold">Site Responsivo</h4>
-                  <p class="text-gray-300 text-sm">Design moderno adaptado para todos os dispositivos</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start mb-3">
-                <div class="bg-yellow-400 text-black rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-mobile-alt"></i>
-                </div>
-                <div class="ml-4">
-                  <h4 class="font-semibold">Aplicativo Personalizado</h4>
-                  <p class="text-gray-300 text-sm">App exclusivo para Android e iOS com sua marca</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start">
-                <div class="bg-yellow-400 text-black rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-headset"></i>
-                </div>
-                <div class="ml-4">
-                  <h4 class="font-semibold">Atendimento 24/7</h4>
-                  <p class="text-gray-300 text-sm">Assistente virtual integrado às suas redes sociais</p>
-                </div>
-              </div>
+      <!-- Tabs para categorias de pacotes -->
+      <div class="flex flex-wrap justify-center mb-8">
+        <button class="tab-button active bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg mx-2 mb-2 transition-all" onclick="showTab('todos')">Todos</button>
+        <button class="tab-button bg-white bg-opacity-10 hover:bg-opacity-20 text-white py-2 px-6 rounded-lg mx-2 mb-2 transition-all" onclick="showTab('sites')">Sites</button>
+        <button class="tab-button bg-white bg-opacity-10 hover:bg-opacity-20 text-white py-2 px-6 rounded-lg mx-2 mb-2 transition-all" onclick="showTab('apps')">Aplicativos</button>
+        <button class="tab-button bg-white bg-opacity-10 hover:bg-opacity-20 text-white py-2 px-6 rounded-lg mx-2 mb-2 transition-all" onclick="showTab('assistentes')">Assistentes</button>
+        <button class="tab-button bg-white bg-opacity-10 hover:bg-opacity-20 text-white py-2 px-6 rounded-lg mx-2 mb-2 transition-all" onclick="showTab('manutencao')">Manutenção</button>
+      </div>
+      
+      <!-- Grid de pacotes -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <!-- Pacote 1: Básico -->
+        <div class="bg-white bg-opacity-10 rounded-xl shadow-lg backdrop-blur-sm glass btn-hover tab-content todos sites">
+          <div class="p-6 border-b border-white border-opacity-20">
+            <h3 class="text-2xl font-semibold mb-2">Site Básico</h3>
+            <p class="text-gray-300 mb-4">Ideal para pequenos negócios</p>
+            <div class="flex justify-center mb-4">
+              <span class="text-3xl font-bold">R$</span>
+              <span class="text-4xl font-bold">499</span>
+              <span class="text-lg self-end mb-1">/único</span>
             </div>
           </div>
-          
-          <div class="md:w-1/2 md:border-l md:border-white md:border-opacity-20 md:pl-6">
-            <div class="bg-gradient-secondary p-6 rounded-lg">
-              <h3 class="text-2xl font-semibold mb-2">Pacote Premium</h3>
-              <p class="text-gray-300 mb-4">Tudo o que você precisa para transformar seu negócio</p>
-              
-              <div class="flex justify-center mb-6">
-                <span class="text-4xl font-bold">R$</span>
-                <span class="text-5xl font-bold">997</span>
-                <span class="text-xl self-end mb-1">/mês</span>
-              </div>
-              
-              <ul class="text-left space-y-3 mb-6">
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                  <span>Desenvolvimento completo</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                  <span>Suporte técnico prioritário</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                  <span>Atualizações mensais</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                  <span>Relatórios de desempenho</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                  <span>Treinamento da equipe</span>
-                </li>
-              </ul>
-              
-              <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold block text-center">
-                Quero o Pacote Completo
-              </a>
+          <div class="p-6">
+            <ul class="text-left space-y-3 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Site responsivo de até 5 páginas</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Formulário de contato</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Otimização para SEO básica</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Hospedagem por 1 ano</span>
+              </li>
+            </ul>
+            <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-block w-full text-center">
+              Solicitar Proposta
+            </a>
+          </div>
+        </div>
+        
+        <!-- Pacote 2: Profissional -->
+        <div class="bg-white bg-opacity-10 rounded-xl shadow-lg backdrop-blur-sm glass btn-hover tab-content todos sites">
+          <div class="p-6 border-b border-white border-opacity-20">
+            <h3 class="text-2xl font-semibold mb-2">Site Profissional</h3>
+            <p class="text-gray-300 mb-4">Para empresas em crescimento</p>
+            <div class="flex justify-center mb-4">
+              <span class="text-3xl font-bold">R$</span>
+              <span class="text-4xl font-bold">799</span>
+              <span class="text-lg self-end mb-1">/único</span>
             </div>
+          </div>
+          <div class="p-6">
+            <ul class="text-left space-y-3 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Site responsivo de até 10 páginas</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Blog integrado</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Otimização para SEO avançada</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Integração com redes sociais</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Hospedagem por 1 ano</span>
+              </li>
+            </ul>
+            <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-block w-full text-center">
+              Solicitar Proposta
+            </a>
+          </div>
+        </div>
+        
+        <!-- Pacote 3: Assistente Virtual -->
+        <div class="bg-white bg-opacity-10 rounded-xl shadow-lg backdrop-blur-sm glass btn-hover tab-content todos assistentes">
+          <div class="p-6 border-b border-white border-opacity-20">
+            <div class="absolute top-4 right-4">
+              <span class="bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full">DESTAQUE</span>
+            </div>
+            <h3 class="text-2xl font-semibold mb-2">Assistente Virtual</h3>
+            <p class="text-gray-300 mb-4">Atendimento automatizado 24/7</p>
+            <div class="flex justify-center mb-4">
+              <span class="text-3xl font-bold">R$</span>
+              <span class="text-4xl font-bold">800</span>
+              <span class="text-lg self-end mb-1">/único</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <ul class="text-left space-y-3 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Integração com WhatsApp e Facebook</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Respostas automáticas personalizadas</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Sistema de agendamento</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Catálogo de produtos/serviços</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Relatórios de atendimento</span>
+              </li>
+            </ul>
+            <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-block w-full text-center">
+              Solicitar Proposta
+            </a>
+          </div>
+        </div>
+        
+        <!-- Pacote 4: Aplicativo Básico -->
+        <div class="bg-white bg-opacity-10 rounded-xl shadow-lg backdrop-blur-sm glass btn-hover tab-content todos apps">
+          <div class="p-6 border-b border-white border-opacity-20">
+            <h3 class="text-2xl font-semibold mb-2">App Básico</h3>
+            <p class="text-gray-300 mb-4">Aplicativo personalizado</p>
+            <div class="flex justify-center mb-4">
+              <span class="text-3xl font-bold">R$</span>
+              <span class="text-4xl font-bold">899</span>
+              <span class="text-lg self-end mb-1">/único</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <ul class="text-left space-y-3 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Aplicativo para Android</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Até 5 telas principais</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Publicação na Play Store</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Suporte por 3 meses</span>
+              </li>
+            </ul>
+            <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-block w-full text-center">
+              Solicitar Proposta
+            </a>
+          </div>
+        </div>
+        
+        <!-- Pacote 5: Manutenção Mensal -->
+        <div class="bg-white bg-opacity-10 rounded-xl shadow-lg backdrop-blur-sm glass btn-hover tab-content todos manutencao">
+          <div class="p-6 border-b border-white border-opacity-20">
+            <div class="absolute top-4 right-4">
+              <span class="bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full">DESTAQUE</span>
+            </div>
+            <h3 class="text-2xl font-semibold mb-2">Manutenção Mensal</h3>
+            <p class="text-gray-300 mb-4">Suporte contínuo para seu negócio</p>
+            <div class="flex justify-center mb-4">
+              <span class="text-3xl font-bold">R$</span>
+              <span class="text-4xl font-bold">149</span>
+              <span class="text-lg self-end mb-1">,99/mês</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <ul class="text-left space-y-3 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Atualizações de conteúdo</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Monitoramento de segurança</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Backup semanal</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Suporte técnico por e-mail</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Relatório mensal de desempenho</span>
+              </li>
+            </ul>
+            <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-block w-full text-center">
+              Solicitar Proposta
+            </a>
+          </div>
+        </div>
+        
+        <!-- Pacote 6: E-commerce -->
+        <div class="bg-white bg-opacity-10 rounded-xl shadow-lg backdrop-blur-sm glass btn-hover tab-content todos sites">
+          <div class="p-6 border-b border-white border-opacity-20">
+            <h3 class="text-2xl font-semibold mb-2">E-commerce</h3>
+            <p class="text-gray-300 mb-4">Loja virtual completa</p>
+            <div class="flex justify-center mb-4">
+              <span class="text-3xl font-bold">R$</span>
+              <span class="text-4xl font-bold">1.299</span>
+              <span class="text-lg self-end mb-1">/único</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <ul class="text-left space-y-3 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Loja virtual completa</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Até 100 produtos</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Integração com meios de pagamento</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Cálculo de frete automático</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Painel administrativo</span>
+              </li>
+            </ul>
+            <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-block w-full text-center">
+              Solicitar Proposta
+            </a>
+          </div>
+        </div>
+        
+        <!-- Pacote 7: Premium (Completo) -->
+        <div class="bg-white bg-opacity-10 rounded-xl shadow-lg backdrop-blur-sm glass btn-hover tab-content todos" style="grid-column: 1 / -1;">
+          <div class="p-6 border-b border-white border-opacity-20">
+            <div class="absolute top-4 right-4">
+              <span class="bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full">MAIS POPULAR</span>
+            </div>
+            <h3 class="text-2xl font-semibold mb-2">Pacote Premium</h3>
+            <p class="text-gray-300 mb-4">Transformação Digital Completa</p>
+            <div class="flex justify-center mb-4">
+              <span class="text-3xl font-bold">R$</span>
+              <span class="text-4xl font-bold">997</span>
+              <span class="text-lg self-end mb-1">/mês</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div>
+                <h4 class="font-semibold text-lg mb-3 text-left">Presença Digital</h4>
+                <ul class="text-left space-y-2 mb-6">
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                    <span>Site responsivo completo</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                    <span>Google Maps Profissional</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                    <span>Otimização para SEO avançada</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-3 text-left">Aplicativos & Automação</h4>
+                <ul class="text-left space-y-2 mb-6">
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                    <span>Aplicativo personalizado</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                    <span>Assistente virtual 24/7</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                    <span>Integração com sistemas</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-3 text-left">Suporte & Manutenção</h4>
+                <ul class="text-left space-y-2 mb-6">
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                    <span>Suporte técnico prioritário</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                    <span>Atualizações mensais</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                    <span>Relatórios de desempenho</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-block w-full md:w-1/3 mx-auto text-center">
+              Solicitar Proposta
+            </a>
           </div>
         </div>
       </div>
+      
+      <!-- Texto de incentivo -->
+      <div class="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg backdrop-blur-sm max-w-3xl mx-auto glass btn-hover">
+        <h3 class="text-xl font-semibold mb-4">Não encontrou o que procura?</h3>
+        <p class="text-gray-300 mb-4">Podemos criar um pacote personalizado para atender às necessidades específicas da sua empresa.</p>
+        <a href="#contact" class="bg-white bg-opacity-20 hover:bg-opacity-30 py-3 px-6 rounded-lg font-semibold transition-all inline-flex items-center justify-center glass btn-hover">
+          <i class="fas fa-comment-dots mr-2"></i> Fale Conosco
+        </a>
+      </div>
     </div>
   </section>
+  
+  <!-- Script para as tabs de pacotes -->
+  <script>
+    function showTab(tabName) {
+      // Atualiza os botões
+      document.querySelectorAll('.tab-button').forEach(button => {
+        button.classList.remove('active', 'bg-blue-600', 'hover:bg-blue-700');
+        button.classList.add('bg-white', 'bg-opacity-10', 'hover:bg-opacity-20');
+      });
+      
+      document.querySelector(`.tab-button[onclick="showTab('${tabName}')"]`).classList.add('active', 'bg-blue-600', 'hover:bg-blue-700');
+      document.querySelector(`.tab-button[onclick="showTab('${tabName}')"]`).classList.remove('bg-white', 'bg-opacity-10', 'hover:bg-opacity-20');
+      
+      // Mostra/esconde os pacotes
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.style.display = 'none';
+      });
+      
+      if (tabName === 'todos') {
+        document.querySelectorAll('.tab-content.todos').forEach(content => {
+          content.style.display = 'block';
+        });
+      } else {
+        document.querySelectorAll(`.tab-content.${tabName}`).forEach(content => {
+          content.style.display = 'block';
+        });
+      }
+    }
+    
+    // Inicializa mostrando todos os pacotes
+    document.addEventListener('DOMContentLoaded', function() {
+      showTab('todos');
+    });
+  </script>
 
-  <!-- Testimonials Section com efeito de parallax -->
-  <section id="testimonials" class="py-16 relative parallax" style="background: url('https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e') no-repeat center center; background-size: cover;">
-    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+  <!-- Testimonials Section com fundo gradiente -->
+  <section id="testimonials" class="py-16 relative">
+    <div class="absolute inset-0 z-0" style="background: url('https://images.unsplash.com/photo-1557682250-33bd709cbe85') no-repeat center center; background-size: cover; opacity: 0.2;"></div>
+    <div class="bg-gradient-secondary bg-opacity-90 absolute inset-0 z-0"></div>
     <div class="container mx-auto px-4 text-center relative z-10">
       <h2 class="text-3xl font-bold mb-2">O Que Nossos Clientes Dizem</h2>
       <p class="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">Veja como nossas soluções transformaram negócios como o seu</p>
@@ -377,10 +665,10 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg card-hover backdrop-blur-sm glass">
           <div class="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Cliente" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Cliente" class="w-full h-full object-cover">
           </div>
-          <h3 class="text-xl font-semibold mb-2">Ana Silva</h3>
-          <p class="text-sm text-gray-400 mb-4">Proprietária - Boutique Elegance</p>
+          <h3 class="text-xl font-semibold mb-2">Carlos Silva</h3>
+          <p class="text-sm text-gray-400 mb-4">Proprietário - Restaurante Sabor & Arte</p>
           <div class="flex justify-center mb-4">
             <i class="fas fa-star text-yellow-400"></i>
             <i class="fas fa-star text-yellow-400"></i>
@@ -388,15 +676,15 @@
             <i class="fas fa-star text-yellow-400"></i>
             <i class="fas fa-star text-yellow-400"></i>
           </div>
-          <p class="text-gray-300">"O assistente virtual da SPSmart revolucionou meu atendimento. Agora consigo responder clientes 24 horas por dia e aumentei minhas vendas em 40%!"</p>
+          <p class="text-gray-300">"O assistente virtual desenvolvido pela SPSmart revolucionou nosso atendimento. Agora recebemos pedidos 24h por dia e nossos clientes adoram a praticidade!"</p>
         </div>
         
         <div class="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg card-hover backdrop-blur-sm glass">
           <div class="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Cliente" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Cliente" class="w-full h-full object-cover">
           </div>
-          <h3 class="text-xl font-semibold mb-2">Carlos Mendes</h3>
-          <p class="text-sm text-gray-400 mb-4">CEO - Restaurante Sabor & Arte</p>
+          <h3 class="text-xl font-semibold mb-2">Marcos Oliveira</h3>
+          <p class="text-sm text-gray-400 mb-4">CEO - Delivery Express</p>
           <div class="flex justify-center mb-4">
             <i class="fas fa-star text-yellow-400"></i>
             <i class="fas fa-star text-yellow-400"></i>
@@ -574,7 +862,7 @@
           <ul class="space-y-2">
             <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Início</a></li>
             <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Serviços</a></li>
-            <li><a href="#package" class="text-gray-400 hover:text-white transition-colors">Pacote Completo</a></li>
+            <li><a href="#package" class="text-gray-400 hover:text-white transition-colors">Pacotes</a></li>
             <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Depoimentos</a></li>
             <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contato</a></li>
           </ul>
@@ -587,7 +875,7 @@
             <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Aplicativos Mobile</a></li>
             <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Assistente Virtual</a></li>
             <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Integração de Sistemas</a></li>
-            <li><a href="#package" class="text-gray-400 hover:text-white transition-colors">Pacote Completo</a></li>
+            <li><a href="#package" class="text-gray-400 hover:text-white transition-colors">Pacotes Completos</a></li>
           </ul>
         </div>
         
@@ -603,111 +891,48 @@
         </div>
       </div>
       
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-        <p>© 2025 SPSmart. Todos os direitos reservados.</p>
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
+        <p>&copy; 2025 SPSmart. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script>
     // Menu Mobile
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const closeMenuButton = document.getElementById('close-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-      
-      mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.add('active');
-      });
-      
-      closeMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.remove('active');
-      });
-      
-      mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          mobileMenu.classList.remove('active');
-        });
-      });
-      
-      // Smooth Scroll
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          const targetId = this.getAttribute('href');
-          const targetElement = document.querySelector(targetId);
-          
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-      
-      // Form Submission
-      const contactForm = document.getElementById('contact-form');
-      if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          // Validação básica
-          const name = document.getElementById('name').value;
-          const email = document.getElementById('email').value;
-          const phone = document.getElementById('phone').value;
-          const company = document.getElementById('company').value;
-          const service = document.getElementById('service').value;
-          const message = document.getElementById('message').value;
-          
-          if (!name || !email || !phone || !company || !service || !message) {
-            alert('Por favor, preencha todos os campos do formulário.');
-            return;
-          }
-          
-          // Simulação de envio
-          alert('Mensagem enviada com sucesso! Nossa equipe entrará em contato em breve.');
-          this.reset();
-        });
-      }
-      
-      // Newsletter Form
-      const newsletterForm = document.getElementById('newsletter-form');
-      if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          alert('Obrigado por se inscrever em nossa newsletter!');
-          this.reset();
-        });
-      }
-      
-      // Animação de elementos ao scroll
-      const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.card-hover');
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.add('active');
+    });
+    
+    document.getElementById('close-menu-button').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.remove('active');
+    });
+    
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
         
-        elements.forEach(element => {
-          const elementPosition = element.getBoundingClientRect().top;
-          const screenPosition = window.innerHeight / 1.3;
-          
-          if (elementPosition < screenPosition) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-          }
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
         });
-      };
-      
-      // Inicializa os elementos com opacidade 0
-      document.querySelectorAll('.card-hover').forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'all 0.5s ease-out';
+        
+        // Fecha o menu mobile se estiver aberto
+        document.getElementById('mobile-menu').classList.remove('active');
       });
-      
-      // Executa a animação no carregamento e no scroll
-      window.addEventListener('load', animateOnScroll);
-      window.addEventListener('scroll', animateOnScroll);
+    });
+    
+    // Form Submission
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Obrigado pelo seu contato! Retornaremos em breve.');
+      this.reset();
+    });
+    
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Obrigado por se inscrever em nossa newsletter!');
+      this.reset();
     });
   </script>
 </body>
