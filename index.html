@@ -186,6 +186,49 @@
       transform: scaleX(1);
       transform-origin: left;
     }
+    
+    /* Estilos para o seletor do formulário de contato */
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1em;
+      padding-right: 2.5rem;
+    }
+    
+    select option {
+      background-color: #1e293b;
+      color: white;
+      padding: 10px;
+    }
+    
+    select option:hover, select option:focus, select option:active {
+      background-color: #3b82f6;
+    }
+    
+    /* Estilo específico para o seletor do formulário de contato */
+    #service-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    #service-select:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+      outline: none;
+    }
+    
+    #service-select:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
   </style>
 </head>
 <body class="font-sans text-white">
@@ -379,7 +422,7 @@
             <p class="text-gray-300 mb-4">Ideal para pequenos negócios</p>
             <div class="flex justify-center items-baseline mb-4">
               <span class="text-3xl font-bold">R$</span>
-              <span class="text-5xl font-bold">499</span>
+              <span class="text-5xl font-bold">990</span>
               <span class="text-lg ml-1">/único</span>
             </div>
           </div>
@@ -387,7 +430,11 @@
             <ul class="text-left space-y-3 mb-6">
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                <span>Site responsivo de até 5 páginas</span>
+                <span>Até 5 páginas</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Design responsivo</span>
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
@@ -399,7 +446,7 @@
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                <span>Hospedagem por 1 ano</span>
+                <span>Integração com redes sociais</span>
               </li>
             </ul>
             <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-block w-full text-center">
@@ -409,13 +456,14 @@
         </div>
         
         <!-- Pacote 2: Site Profissional -->
-        <div class="price-card bg-white bg-opacity-10 rounded-xl shadow-lg backdrop-blur-sm glass tab-content todos sites relative overflow-hidden">
+        <div class="price-card featured bg-white bg-opacity-10 rounded-xl shadow-lg backdrop-blur-sm glass tab-content todos sites relative overflow-hidden">
+          <div class="badge-featured">MAIS VENDIDO</div>
           <div class="p-6 border-b border-white border-opacity-20">
             <h3 class="text-2xl font-semibold mb-2">Site Profissional</h3>
             <p class="text-gray-300 mb-4">Para empresas em crescimento</p>
             <div class="flex justify-center items-baseline mb-4">
               <span class="text-3xl font-bold">R$</span>
-              <span class="text-5xl font-bold">799</span>
+              <span class="text-5xl font-bold">1.990</span>
               <span class="text-lg ml-1">/único</span>
             </div>
           </div>
@@ -423,7 +471,11 @@
             <ul class="text-left space-y-3 mb-6">
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                <span>Site responsivo de até 10 páginas</span>
+                <span>Até 10 páginas</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Design premium responsivo</span>
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
@@ -431,15 +483,15 @@
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                <span>Otimização para SEO avançada</span>
+                <span>Otimização avançada para SEO</span>
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                <span>Integração com redes sociais</span>
+                <span>Painel administrativo</span>
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                <span>Hospedagem por 1 ano</span>
+                <span>Integração com Google Analytics</span>
               </li>
             </ul>
             <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-block w-full text-center">
@@ -455,7 +507,7 @@
             <p class="text-gray-300 mb-4">Loja virtual completa</p>
             <div class="flex justify-center items-baseline mb-4">
               <span class="text-3xl font-bold">R$</span>
-              <span class="text-5xl font-bold">1.299</span>
+              <span class="text-5xl font-bold">3.990</span>
               <span class="text-lg ml-1">/único</span>
             </div>
           </div>
@@ -467,7 +519,7 @@
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                <span>Até 100 produtos</span>
+                <span>Cadastro ilimitado de produtos</span>
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
@@ -479,7 +531,11 @@
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                <span>Painel administrativo</span>
+                <span>Painel administrativo completo</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Relatórios de vendas</span>
               </li>
             </ul>
             <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-block w-full text-center">
@@ -488,14 +544,14 @@
           </div>
         </div>
         
-        <!-- Pacote 4: Aplicativo Básico -->
+        <!-- Pacote 4: App Básico -->
         <div class="price-card bg-white bg-opacity-10 rounded-xl shadow-lg backdrop-blur-sm glass tab-content todos apps relative overflow-hidden">
           <div class="p-6 border-b border-white border-opacity-20">
             <h3 class="text-2xl font-semibold mb-2">App Básico</h3>
-            <p class="text-gray-300 mb-4">Aplicativo personalizado</p>
+            <p class="text-gray-300 mb-4">Aplicativo simples e funcional</p>
             <div class="flex justify-center items-baseline mb-4">
               <span class="text-3xl font-bold">R$</span>
-              <span class="text-5xl font-bold">2.499</span>
+              <span class="text-5xl font-bold">4.990</span>
               <span class="text-lg ml-1">/único</span>
             </div>
           </div>
@@ -515,7 +571,11 @@
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                <span>Publicação na Play Store</span>
+                <span>Painel administrativo web</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Publicação na Google Play</span>
               </li>
             </ul>
             <a href="#contact" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-block w-full text-center">
@@ -524,14 +584,15 @@
           </div>
         </div>
         
-        <!-- Pacote 5: Aplicativo Profissional -->
-        <div class="price-card bg-white bg-opacity-10 rounded-xl shadow-lg backdrop-blur-sm glass tab-content todos apps relative overflow-hidden">
+        <!-- Pacote 5: App Profissional -->
+        <div class="price-card featured bg-white bg-opacity-10 rounded-xl shadow-lg backdrop-blur-sm glass tab-content todos apps relative overflow-hidden">
+          <div class="badge-featured">COMPLETO</div>
           <div class="p-6 border-b border-white border-opacity-20">
             <h3 class="text-2xl font-semibold mb-2">App Profissional</h3>
-            <p class="text-gray-300 mb-4">Multiplataforma completo</p>
+            <p class="text-gray-300 mb-4">Aplicativo completo multiplataforma</p>
             <div class="flex justify-center items-baseline mb-4">
               <span class="text-3xl font-bold">R$</span>
-              <span class="text-5xl font-bold">3.999</span>
+              <span class="text-5xl font-bold">8.990</span>
               <span class="text-lg ml-1">/único</span>
             </div>
           </div>
@@ -547,7 +608,15 @@
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-                <span>Integração com APIs</span>
+                <span>Design premium personalizado</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Integração com APIs externas</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+                <span>Sistema de notificações push</span>
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
@@ -920,9 +989,9 @@
             </div>
             
             <div>
-              <label for="service" class="block text-sm font-medium mb-1">Serviço de Interesse</label>
-              <select id="service" class="w-full p-3 rounded-lg bg-white bg-opacity-10 border border-gray-600 text-white">
-                <option value="">Selecione um serviço</option>
+              <label for="service-select" class="block text-sm font-medium mb-1">Serviço de Interesse</label>
+              <select id="service-select" class="w-full p-3 rounded-lg bg-white bg-opacity-10 border border-gray-600 text-white">
+                <option value="" disabled selected>Selecione um serviço</option>
                 <option value="site">Desenvolvimento de Site</option>
                 <option value="app">Aplicativo Mobile</option>
                 <option value="assistant">Assistente Virtual</option>
@@ -934,11 +1003,11 @@
             
             <div>
               <label for="message" class="block text-sm font-medium mb-1">Mensagem</label>
-              <textarea id="message" rows="4" class="w-full p-3 rounded-lg bg-white bg-opacity-10 border border-gray-600 text-white" placeholder="Descreva seu projeto ou necessidade..."></textarea>
+              <textarea id="message" rows="5" class="w-full p-3 rounded-lg bg-white bg-opacity-10 border border-gray-600 text-white" placeholder="Descreva seu projeto ou necessidade"></textarea>
             </div>
             
-            <button type="submit" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold inline-flex items-center justify-center w-full">
-              <i class="fas fa-paper-plane mr-2"></i> Enviar Mensagem
+            <button type="submit" class="btn-primary text-black py-3 px-6 rounded-lg font-semibold w-full">
+              Enviar Mensagem
             </button>
           </form>
         </div>
@@ -948,28 +1017,28 @@
           
           <div class="space-y-6">
             <div class="flex items-start">
-              <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                <i class="fas fa-map-marker-alt text-xl"></i>
+              <div class="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="fas fa-map-marker-alt"></i>
               </div>
               <div>
                 <h4 class="font-semibold mb-1">Endereço</h4>
-                <p class="text-gray-300">Av. Paulista, 1000, Sala 301<br>Bela Vista, São Paulo - SP<br>CEP: 01310-100</p>
+                <p class="text-gray-300">Av. Paulista, 1000 - Bela Vista, São Paulo - SP</p>
               </div>
             </div>
             
             <div class="flex items-start">
-              <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                <i class="fas fa-phone-alt text-xl"></i>
+              <div class="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="fas fa-phone-alt"></i>
               </div>
               <div>
                 <h4 class="font-semibold mb-1">Telefone</h4>
-                <p class="text-gray-300">11933945096</p>
+                <p class="text-gray-300">(11) 93394-5096</p>
               </div>
             </div>
             
             <div class="flex items-start">
-              <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                <i class="fas fa-envelope text-xl"></i>
+              <div class="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="fas fa-envelope"></i>
               </div>
               <div>
                 <h4 class="font-semibold mb-1">E-mail</h4>
@@ -978,35 +1047,30 @@
             </div>
             
             <div class="flex items-start">
-              <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                <i class="fas fa-clock text-xl"></i>
+              <div class="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="fas fa-clock"></i>
               </div>
               <div>
                 <h4 class="font-semibold mb-1">Horário de Atendimento</h4>
-                <p class="text-gray-300">Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+                <p class="text-gray-300">Segunda a Sexta: 9h às 18h</p>
               </div>
             </div>
           </div>
           
-          <div class="mt-8">
-            <h4 class="font-semibold mb-4">Redes Sociais</h4>
-            <div class="flex space-x-4">
-              <a href="#" class="bg-white bg-opacity-10 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="bg-white bg-opacity-10 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#" class="bg-white bg-opacity-10 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="#" class="bg-white bg-opacity-10 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="bg-white bg-opacity-10 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all">
-                <i class="fab fa-youtube"></i>
-              </a>
-            </div>
+          <h4 class="text-xl font-semibold mt-8 mb-4">Nos Siga</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="bg-white bg-opacity-10 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="bg-white bg-opacity-10 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="bg-white bg-opacity-10 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="bg-white bg-opacity-10 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all">
+              <i class="fab fa-whatsapp"></i>
+            </a>
           </div>
         </div>
       </div>
